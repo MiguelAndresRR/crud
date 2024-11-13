@@ -39,7 +39,7 @@
                 <label for="exampleInputEmail1" class="form-label">Correo:</label>
                 <input type="text" class="form-control" name="correo">
             </div>
-            <button type="submit" class="btn btn-primary">Registro</button>
+            <button type="submit" class="btn btn-primary">Registrar</button>
         </form>
         <div class="col-8 p-4">
             <table class="table">
@@ -59,16 +59,17 @@
                     include "modelo/conexion.php";
                     $sql=$conexion->query("select * from tb_persona");
                     while($datos=$sql->fetch_object()){?>
+
                     <tr>
-                        <td><?=$datos->id ?></td>
-                        <td><?=$datos->nombre ?></td>
-                        <td><?=$datos->apellido ?></td>
-                        <td><?=$datos->documento?></td>
-                        <td><?=$datos->fecha_nc?></td>
-                        <td><?=$datos->correo?></td>
+                        <td><?= $datos->id ?></td>
+                        <td><?= $datos->nombre ?></td>
+                        <td><?= $datos->apellido ?></td>
+                        <td><?= $datos->documento ?></td>
+                        <td><?= $datos->fecha_nc ?></td>
+                        <td><?= $datos->correo ?></td>
                         <td>
                             <a href="modificar_persona.php?id=<?= $datos->id?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                            <a href="" class="btn btn-small btn-danger" name="btnregistrar"><i class="fa-solid fa-trash-can"></i></a>
                         </td>
                     </tr>
                     <?php }

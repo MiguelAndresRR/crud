@@ -14,7 +14,7 @@ if(!empty($_POST["btnregistrar"])){
             echo '<div class="alert alert-danger">Error al registrada correctamente</div>';
         }
     } else {
-    echo '<div class="alert alert-warning">Uno o más campos están vacíos</div>';
+        echo '<div class="alert alert-warning">Uno o más campos están vacíos</div>';
     }
 }
 ?>
