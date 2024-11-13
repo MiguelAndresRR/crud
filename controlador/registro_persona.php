@@ -7,7 +7,7 @@ if(!empty($_POST["btnregistrar"])){
         $fecha_nc = $_POST["fecha_nc"];
         $correo = $_POST["correo"];
 
-        $sql = $conexion->query("insert into tb_tb_persona(nombre,apellido,documento,fecha_nc,correo)values('$nombre','$apellido','$documento','$fecha_nc','$correo')");
+        $sql = $conexion->query("insert into tb_persona(nombre,apellido,documento,fecha_nc,correo)values('$nombre','$apellido','$documento','$fecha_nc','$correo')");
         if ($sql ==1) {
             echo '<div class="alert alert-success">Persona registrada correctamente</div>';
         } else {

@@ -42,7 +42,7 @@
                 <label for="exampleInputEmail1" class="form-label">Correo:</label>
                 <input type="text" class="form-control" name="correo">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Registro</button>
         </form>
         <div class="col-8 p-4">
             <table class="table">
