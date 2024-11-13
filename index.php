@@ -11,12 +11,22 @@
 </head>
 
 <body>
+    <script>
+        function eliminar(){
+            var respuesta = confirm("¿Está seguro de querer eliminar el registro?");
+            return respuesta
+        }
+    </script>
     <h1 class="text-center p-3">Modulo de Registro de usuarios</h1>
+    <?php
+    include "modelo/conexion.php";
+    include "controlador/eliminar_persona.php"
+    ?>
     <div class="container-fluid row">
         <form class="col-4" p-3 method="POST">
             <h3 class="text-center text-secondary"> Registro de personas</h3>
             <?php
-            include "modelo/conexion.php";
+            
             include "controlador/registro_persona.php";
             ?>
             <div class="mb-3">
@@ -39,7 +49,7 @@
                 <label for="exampleInputEmail1" class="form-label">Correo:</label>
                 <input type="text" class="form-control" name="correo">
             </div>
-            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
         </form>
         <div class="col-8 p-4">
             <table class="table">
@@ -59,7 +69,6 @@
                     include "modelo/conexion.php";
                     $sql=$conexion->query("select * from tb_persona");
                     while($datos=$sql->fetch_object()){?>
-
                     <tr>
                         <td><?= $datos->id ?></td>
                         <td><?= $datos->nombre ?></td>
@@ -69,7 +78,7 @@
                         <td><?= $datos->correo ?></td>
                         <td>
                             <a href="modificar_persona.php?id=<?= $datos->id?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="" class="btn btn-small btn-danger" name="btnregistrar"><i class="fa-solid fa-trash-can"></i></a>
+                            <a onclick="return eliminar()"href="index.php?id=<?= $datos->id?>" class="btn btn-small btn-danger" name="btnregistrar"><i class="fa-solid fa-trash-can"></i></a>
                         </td>
                     </tr>
                     <?php }
