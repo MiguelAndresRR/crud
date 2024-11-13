@@ -16,7 +16,7 @@ $sql=$conexion->query(" select * from tb_persona where id=$id");
     <form class="col-4 p-3 m-auto" method="POST">
         <h3 class="text-center text-secondary">Modificar registro</h3>
         <?php
-        while($datps=$sql->fetch_object()){?>
+        while($datos=$sql->fetch_object()){?>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" name="nombre" value="<?= $datos->nombre ?>">
@@ -40,8 +40,7 @@ $sql=$conexion->query(" select * from tb_persona where id=$id");
             </div>
         <?php }
         ?>
-
-        <button type="submit" class="btn btn-primary" name="btnregistrar" value"ok">Registrar</button>
+        <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
     </form>
 </body>
 </html>
