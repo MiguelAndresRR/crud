@@ -11,10 +11,10 @@ if(!empty($_POST["btnregistrar"])){
         if ($sql ==1) {
             echo '<div class="alert alert-success">Persona registrada correctamente</div>';
         } else {
-            echo '<div class="alert alert-success">Error al registrada correctamente</div>';
+            echo '<div class="alert alert-danger">Error al registrada correctamente</div>';
         }
-    }
-} else {
+    } else {
     echo '<div class="alert alert-warning">Uno o más campos están vacíos</div>';
+    }
 }
 ?>

@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=d, initial-scale=1.0">
     <title>Crud php y MySQL</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/171f3dc321.js"
         crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1 class="text-center p-3">hola</h1>
+    <h1 class="text-center p-3">Modulo de Registro de usuarios</h1>
     <div class="container-fluid row">
         <form class="col-4" p-3 method="POST">
             <h3 class="text-center text-secondary"> Registro de personas</h3>
@@ -60,8 +57,8 @@
                 <tbody>
                     <?php
                     include "modelo/conexion.php";
-                    $sql=$conexion->query("select*from tb_persona");
-                    while($datos=$sql->fetch_object()) { ?>
+                    $sql=$conexion->query("select * from tb_persona");
+                    while($datos=$sql->fetch_object()){?>
                     <tr>
                         <td><?=$datos->id ?></td>
                         <td><?=$datos->nombre ?></td>
@@ -70,7 +67,7 @@
                         <td><?=$datos->fecha_nc?></td>
                         <td><?=$datos->correo?></td>
                         <td>
-                            <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="modificar_persona.php?id=<?= $datos->id?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                         </td>
                     </tr>
