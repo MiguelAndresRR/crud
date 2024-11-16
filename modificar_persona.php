@@ -15,7 +15,7 @@ $sql=$conexion->query(" select * from tb_persona where id=$id");
 <body>
     <form class="col-4 p-3 m-auto" method="POST">
         <h3 class="text-center text-secondary">Modificar registro</h3>
-        <input type="hidden" name="id" value="<? $_GET["id"]?>">
+        <input type="hidden" name="id" value="<? $_GET["id"]?>
         <?php
         include "controlador/actualizar_persona.php";
         while($datos=$sql->fetch_object()){?>

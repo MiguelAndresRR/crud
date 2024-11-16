@@ -61,7 +61,6 @@
                         <th scope="col">Documento</th>
                         <th scope="col">Fecha de nacimiento</th>
                         <th scope="col">Correo</th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
